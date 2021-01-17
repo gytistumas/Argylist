@@ -1,0 +1,60 @@
+//
+//  APIService.swift
+//  Argylist
+//
+//  Created by Gytis Tumas on 2021-01-16.
+//
+
+import Foundation
+import Alamofire
+import SwiftyJSON
+
+class APIService {
+    static let shared = APIService()
+    let apiHost = "https://api.argyle.io/link/v1/"
+    let limit = "15"
+
+    func getURL(forSearchText searchText: String) -> String {
+        let url = "\(apiHost)link-items?limit=\(limit)&offset=0&search=\(searchText)"
+        return url
+    }
+
+    func fetchLinkItems(withURL url: String, completion: @escaping (Swift.Result<LinkItemPage, AFError>) -> Void) {
+        AF.request(url).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                var linkItems = [LinkItem]()
+                if let results = json["results"].array {
+                    for result in results {
+                        if let linkItem = LinkItem.init(json: result) {
+                            linkItems.append(linkItem)
+                        }
+                    }
+                }
+                let nextPageURL = json["next"].string
+                let previousPageURL = json["previous"].string
+                let linkItemPage = LinkItemPage(
+                    linkItems: linkItems,
+                    nextPageURL: nextPageURL,
+                    previousPageURL: previousPageURL
+                )
+                completion(.success(linkItemPage))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+}
+
+class LinkItemPage {
+    let linkItems: [LinkItem]
+    let nextPageURL: String?
+    let previousPageURL: String?
+
+    init(linkItems: [LinkItem], nextPageURL: String?, previousPageURL: String?) {
+        self.linkItems = linkItems
+        self.nextPageURL = nextPageURL
+        self.previousPageURL = previousPageURL
+    }
+}
