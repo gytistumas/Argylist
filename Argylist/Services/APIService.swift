@@ -14,12 +14,11 @@ class APIService {
     let apiHost = "https://api.argyle.io/link/v1/"
     let limit = "15"
 
-    func getURL(forSearchText searchText: String) -> String {
-        let url = "\(apiHost)link-items?limit=\(limit)&offset=0&search=\(searchText)"
-        return url
+    func url(forSearchText searchText: String) -> String {
+        "\(apiHost)link-items?limit=\(limit)&offset=0&search=\(searchText)"
     }
 
-    func fetchLinkItems(withURL url: String, completion: @escaping (Swift.Result<LinkItemPage, AFError>) -> Void) {
+    func getLinkItems(withURL url: String, completion: @escaping (Swift.Result<LinkItemPage, AFError>) -> Void) {
         AF.request(url).responseJSON { response in
             switch response.result {
             case .success(let value):
@@ -44,17 +43,5 @@ class APIService {
                 completion(.failure(error))
             }
         }
-    }
-}
-
-class LinkItemPage {
-    let linkItems: [LinkItem]
-    let nextPageURL: String?
-    let previousPageURL: String?
-
-    init(linkItems: [LinkItem], nextPageURL: String?, previousPageURL: String?) {
-        self.linkItems = linkItems
-        self.nextPageURL = nextPageURL
-        self.previousPageURL = previousPageURL
     }
 }

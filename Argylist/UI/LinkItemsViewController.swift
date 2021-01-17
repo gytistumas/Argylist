@@ -87,7 +87,7 @@ class LinkItemsViewController: UIViewController {
     private func getLinkItems(withURL url: String) {
         activityIndicator.startAnimating()
         activityIndicator.isHidden = false
-        APIService.shared.fetchLinkItems(withURL: url) { (result) in
+        APIService.shared.getLinkItems(withURL: url) { (result) in
             self.activityIndicator.stopAnimating()
             self.activityIndicator.isHidden = true
             switch result {
@@ -160,7 +160,7 @@ extension LinkItemsViewController: UISearchBarDelegate {
             updateUI()
             return
         }
-        let url = APIService.shared.getURL(forSearchText: searchText)
+        let url = APIService.shared.url(forSearchText: searchText)
         getLinkItems(withURL: url)
     }
 }

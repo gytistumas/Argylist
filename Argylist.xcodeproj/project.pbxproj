@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		20782F59D0FED0F9410F6BAA /* Pods_Argylist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 561F683279FDDEF0B33D7050 /* Pods_Argylist.framework */; };
+		6C8B88FF25B4A9DF00D7B3BC /* LinkItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8B88FE25B4A9DF00D7B3BC /* LinkItemPage.swift */; };
 		6C9961A225B452EF002B62E7 /* LinkItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9961A125B452EF002B62E7 /* LinkItemDetailsViewController.swift */; };
 		6C9961A725B481F1002B62E7 /* UITableView+EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9961A625B481F1002B62E7 /* UITableView+EmptyState.swift */; };
 		6C9961AC25B48303002B62E7 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9961AB25B48303002B62E7 /* UIViewController+Alerts.swift */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		561F683279FDDEF0B33D7050 /* Pods_Argylist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Argylist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B3E6B548D878717E68A27AE /* Pods-Argylist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Argylist.debug.xcconfig"; path = "Target Support Files/Pods-Argylist/Pods-Argylist.debug.xcconfig"; sourceTree = "<group>"; };
+		6C8B88FE25B4A9DF00D7B3BC /* LinkItemPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkItemPage.swift; sourceTree = "<group>"; };
 		6C9961A125B452EF002B62E7 /* LinkItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkItemDetailsViewController.swift; sourceTree = "<group>"; };
 		6C9961A625B481F1002B62E7 /* UITableView+EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+EmptyState.swift"; sourceTree = "<group>"; };
 		6C9961AB25B48303002B62E7 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				6CB6359B25B30DF800535383 /* LinkItem.swift */,
+				6C8B88FE25B4A9DF00D7B3BC /* LinkItemPage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				6CB6359C25B30DF800535383 /* LinkItem.swift in Sources */,
 				6C9961AC25B48303002B62E7 /* UIViewController+Alerts.swift in Sources */,
 				6CD3FE3E25B2FD6D0053B04F /* SceneDelegate.swift in Sources */,
+				6C8B88FF25B4A9DF00D7B3BC /* LinkItemPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
