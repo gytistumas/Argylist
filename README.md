@@ -8,7 +8,9 @@ The main feature of the app is to display and search among an item list of compa
 
 2. Navigate to the folder and run `pod install`.
 
-3. Open `Argylist.xcworkspace`
+3. Open `Argylist.xcworkspace`.
+
+4. Build and run.
 
 ## Notes
 
